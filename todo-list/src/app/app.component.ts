@@ -29,7 +29,8 @@ export class AppComponent {
     this.todos[id].isCompleted = !this.todos[id].isCompleted;
   }
 
-  removeTodo(): void{
-    this.todos.pop();
+  removeTodo(id: number): void{
+    this.todos = this.todos.filter((v, i) => i !== id); 
+    //recebe o id do todo e filtra todos os valores(v = value) do array, o que não tiver o v do id é mantido.
   }
 }
