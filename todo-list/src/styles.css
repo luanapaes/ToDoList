@@ -1,5 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap';
+/* styles.css */
+/* styles.css */
+@import '../node_modules/@fortawesome/fontawesome-free/css/all.css';
 *{
     font-family: 'Rubik';
     color: rgb(22, 22, 121);

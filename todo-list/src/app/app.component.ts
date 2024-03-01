@@ -14,9 +14,10 @@ import { FormsModule } from '@angular/forms';
 export class AppComponent {
   todos: ToDo[] = [];
   newTodo: string;
+  newValue: string;
 
-  saveTodo(){
-    if(this.newTodo){
+  saveTodo() {
+    if (this.newTodo) {
       let todo = new ToDo();
       todo.name = this.newTodo;
       todo.isCompleted = true;
@@ -25,12 +26,23 @@ export class AppComponent {
     }
   }
 
-  done(id:number){
+  done(id: number) {
     this.todos[id].isCompleted = !this.todos[id].isCompleted;
   }
 
-  removeTodo(id: number): void{
-    this.todos = this.todos.filter((v, i) => i !== id); 
+  removeTodo(id: number): void {
+    this.todos = this.todos.filter((v, i) => i !== id);
     //recebe o id do todo e filtra todos os valores(v = value) do array, o que não tiver o v do id é mantido.
+  }
+
+  updateTodo(id: number) {
+    let newValue = prompt("Informe um valor");
+
+    // caso o usuário passe um usuário deixe o prompt vazio o valor continua o mesmo.
+    if (newValue !== null) {
+      if (newValue !== '') {
+        this.todos[id].name = newValue; //se diferente de vazio atualiza.
+      }
+    }
   }
 }
