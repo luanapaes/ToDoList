@@ -67,3 +67,8 @@ tr:nth-child(odd){
     color: red;
     font-weight: bold;
 }
+
+.fa-pen:hover{
+    cursor: pointer;
+    color: rgb(93, 93, 215);
+}
