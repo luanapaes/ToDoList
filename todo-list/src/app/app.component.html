@@ -8,7 +8,7 @@
         <button class="btn" type="button" id="button-addon2" (click)="saveTodo()">Add</button>
       </div>
       <table class="table">
-        <tbody>
+        <tbody *ngIf="todos && todos.length > 0; else mensagem">
           <tr class="flex" *ngFor="let todo of todos; let i = index">
             <th scope="row">{{ i + 1 }}</th>
             <td class="{{(!todo.isCompleted)? 'done': ''}}" (click)="done(i)">{{ todo.name }}</td>
@@ -16,6 +16,10 @@
             <i class="fas fa-pen" (click)="updateTodo(i)"></i>
           </tr>
         </tbody>
+
+        <ng-template #mensagem>
+          <p>Ainda não há tarefas.</p>
+        </ng-template>
       </table>
     </div>
   </div>

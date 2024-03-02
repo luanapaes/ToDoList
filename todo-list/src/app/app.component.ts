@@ -15,7 +15,7 @@ export class AppComponent {
   todos: ToDo[] = [];
   newTodo: string;
   newValue: string;
-
+  
   saveTodo() {
     if (this.newTodo) {
       let todo = new ToDo();
@@ -23,6 +23,8 @@ export class AppComponent {
       todo.isCompleted = true;
       this.todos.push(todo);
       this.newTodo = '';
+
+      console.log(this.todos)
     }
   }
 
@@ -39,7 +41,7 @@ export class AppComponent {
     let newValue = prompt("Informe um valor");
 
     // caso o usuário passe um usuário deixe o prompt vazio o valor continua o mesmo.
-    if (newValue !== null) {
+    if (newValue) {
       if (newValue !== '') {
         this.todos[id].name = newValue; //se diferente de vazio atualiza.
       }
